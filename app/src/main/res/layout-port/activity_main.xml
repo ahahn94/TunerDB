@@ -40,7 +40,8 @@
                         android:layout_weight="1" android:buttonTint="@android:color/holo_red_dark"
                         android:textColor="@android:color/holo_red_dark" android:textStyle="bold"
                         android:checked="true"
-                        android:contentDescription="Red"/>
+                        android:contentDescription="Red"
+                        android:textSize="18sp"/>
 
                 <RadioButton
                         android:text=" G"
@@ -49,7 +50,8 @@
                         android:id="@+id/radioButtonGreen"
                         android:layout_weight="1" android:buttonTint="@android:color/holo_green_dark"
                         android:textColor="@android:color/holo_green_dark" android:textStyle="bold"
-                        android:contentDescription="Green"/>
+                        android:contentDescription="Green"
+                        android:textSize="18sp"/>
 
                 <RadioButton
                         android:text=" B"
@@ -58,7 +60,8 @@
                         android:id="@+id/radioButtonBlue"
                         android:layout_weight="1" android:buttonTint="@android:color/holo_blue_dark"
                         android:textColor="@android:color/holo_blue_dark" android:textStyle="bold"
-                        android:contentDescription="Blue"/>
+                        android:contentDescription="Blue"
+                        android:textSize="18sp"/>
 
                 <RadioButton
                         android:text=" W"
@@ -67,7 +70,8 @@
                         android:id="@+id/radioButtonWhite"
                         android:layout_weight="1" android:buttonTint="@android:color/white"
                         android:textColor="@android:color/white" android:textStyle="bold"
-                        android:contentDescription="White"/>
+                        android:contentDescription="White"
+                        android:textSize="18sp"/>
 
                 <RadioButton
                         android:text=" Y"
@@ -76,7 +80,8 @@
                         android:id="@+id/radioButtonYellow"
                         android:layout_weight="1" android:buttonTint="@android:color/holo_orange_light"
                         android:textColor="@android:color/holo_orange_light" android:textStyle="bold"
-                        android:contentDescription="Yellow"/>
+                        android:contentDescription="Yellow"
+                        android:textSize="18sp"/>
 
                 <RadioButton
                         android:text="M"
@@ -85,7 +90,8 @@
                         android:id="@+id/radioButtonMagenta"
                         android:layout_weight="1" android:buttonTint="@android:color/holo_red_light"
                         android:textColor="@android:color/holo_red_light" android:textStyle="bold"
-                        android:contentDescription="Magenta"/>
+                        android:contentDescription="Magenta"
+                        android:textSize="18sp"/>
             </RadioGroup>
 
             <RadioGroup
@@ -104,7 +110,8 @@
                         android:layout_weight="1" android:buttonTint="@android:color/black"
                         android:textColor="@android:color/black" android:textStyle="bold"
                         android:checked="true"
-                        android:contentDescription="E"/>
+                        android:contentDescription="E"
+                        android:textSize="18sp"/>
 
                 <RadioButton
                         android:text=" A"
@@ -113,7 +120,8 @@
                         android:id="@+id/radioButtonA"
                         android:layout_weight="1" android:buttonTint="@android:color/black"
                         android:textColor="@android:color/black" android:textStyle="bold"
-                        android:contentDescription="A"/>
+                        android:contentDescription="A"
+                        android:textSize="18sp"/>
 
                 <RadioButton
                         android:text=" D"
@@ -122,7 +130,8 @@
                         android:id="@+id/radioButtonD"
                         android:layout_weight="1" android:buttonTint="@android:color/black"
                         android:textColor="@android:color/black" android:textStyle="bold"
-                        android:contentDescription="D"/>
+                        android:contentDescription="D"
+                        android:textSize="18sp"/>
 
                 <RadioButton
                         android:text=" G"
@@ -131,7 +140,8 @@
                         android:id="@+id/radioButtonG"
                         android:layout_weight="1" android:buttonTint="@android:color/black"
                         android:textColor="@android:color/black" android:textStyle="bold"
-                        android:contentDescription="G"/>
+                        android:contentDescription="G"
+                        android:textSize="18sp"/>
 
                 <RadioButton
                         android:text=" B"
@@ -140,7 +150,8 @@
                         android:id="@+id/radioButtonB"
                         android:layout_weight="1" android:buttonTint="@android:color/black"
                         android:textColor="@android:color/black" android:textStyle="bold"
-                        android:contentDescription="B"/>
+                        android:contentDescription="B"
+                        android:textSize="18sp"/>
 
                 <RadioButton
                         android:text=" e"
@@ -149,7 +160,8 @@
                         android:id="@+id/radioButtone"
                         android:layout_weight="1" android:buttonTint="@android:color/black"
                         android:textColor="@android:color/black" android:textStyle="bold"
-                        android:contentDescription="e"/>
+                        android:contentDescription="e"
+                        android:textSize="18sp"/>
             </RadioGroup>
 
             <EditText
@@ -173,14 +185,16 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/buttonSearch"
-                        android:layout_weight="1"/>
+                        android:layout_weight="1"
+                        android:textSize="18sp"/>
 
                 <Button
                         android:text="Save Changes"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/buttonSave"
-                        android:layout_weight="1"/>
+                        android:layout_weight="1"
+                        android:textSize="18sp"/>
 
             </LinearLayout>
 
@@ -194,14 +208,16 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/buttonViewDB"
-                        android:layout_weight="1"/>
+                        android:layout_weight="1"
+                        android:textSize="18sp"/>
 
                 <Button
                         android:text="Reset Database"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/buttonResetDB"
-                        android:layout_weight="1"/>
+                        android:layout_weight="1"
+                        android:textSize="18sp"/>
 
             </LinearLayout>
 
