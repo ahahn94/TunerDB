@@ -82,6 +82,9 @@ public class MainActivity extends AppCompatActivity {
                                 if(textView.getText()!=""){
                                     buttonViewDB.performClick(); //Update textView if "View All" was previously triggered.
                                 }
+                                if(editTextEntry.getText().toString() != ""){
+                                    buttonSearch.performClick(); //Update editTextEntry if there is any text in it.
+                                }
                                 Toast.makeText(getApplicationContext(), "Database reset", Toast.LENGTH_SHORT).show();
                             }
                         })
