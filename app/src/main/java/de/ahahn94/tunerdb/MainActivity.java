@@ -1,3 +1,21 @@
+/*
+ * Copyright (c) 2018 ahahn94.
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; either version 2
+ * of the License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ *
+ */
+
 package de.ahahn94.tunerdb;
 
 import android.content.DialogInterface;
@@ -10,13 +28,17 @@ import android.widget.*;
 
 import java.util.Map;
 
+/**
+ * Main Activity of TunerDB
+ * @author ahahn94
+ * @version 1.0
+ */
 public class MainActivity extends AppCompatActivity {
 
-    LinearLayout background;
-    Button buttonSave, buttonSearch, buttonViewDB, buttonResetDB;
-    RadioGroup radioGroupBank, radioGroupCell;
-    TextView textView;
-    EditText editTextEntry;
+    private Button buttonSearch, buttonViewDB;
+    private RadioGroup radioGroupBank, radioGroupCell;
+    private TextView textView;
+    private EditText editTextEntry;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,10 +50,9 @@ public class MainActivity extends AppCompatActivity {
         /*
         Bind Layout to Objects
         */
-        background = findViewById(R.id.background);
-        buttonSave = findViewById(R.id.buttonSave);
+        Button buttonSave = findViewById(R.id.buttonSave);
+        Button buttonResetDB = findViewById(R.id.buttonResetDB);
         buttonSearch = findViewById(R.id.buttonSearch);
-        buttonResetDB = findViewById(R.id.buttonResetDB);
         buttonViewDB = findViewById(R.id.buttonViewDB);
         radioGroupBank = findViewById(R.id.radioGroupBank);
         radioGroupCell = findViewById(R.id.radioGroupCell);
@@ -58,8 +79,8 @@ public class MainActivity extends AppCompatActivity {
         buttonSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String entryKey = ((Button)radioGroupBank.findViewById(radioGroupBank.getCheckedRadioButtonId())).getContentDescription().toString()
-                        + "-" + ((Button)radioGroupCell.findViewById(radioGroupCell.getCheckedRadioButtonId())).getContentDescription().toString();
+                String entryKey = (radioGroupBank.findViewById(radioGroupBank.getCheckedRadioButtonId())).getContentDescription().toString()
+                        + "-" + (radioGroupCell.findViewById(radioGroupCell.getCheckedRadioButtonId())).getContentDescription().toString();
                 Toast.makeText(getApplicationContext(), "Entry loaded", Toast.LENGTH_SHORT).show();
                 editTextEntry.setText(database.getDatabase().get(entryKey));
             }
@@ -82,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
                                 if(textView.getText()!=""){
                                     buttonViewDB.performClick(); //Update textView if "View All" was previously triggered.
                                 }
-                                if(editTextEntry.getText().toString() != ""){
+                                if(!editTextEntry.getText().toString().equals("")){
                                     buttonSearch.performClick(); //Update editTextEntry if there is any text in it.
                                 }
                                 Toast.makeText(getApplicationContext(), "Database reset", Toast.LENGTH_SHORT).show();
@@ -96,17 +117,13 @@ public class MainActivity extends AppCompatActivity {
         buttonViewDB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String databaseToText = "";
+                StringBuilder databaseToText = new StringBuilder();
                 for (Map.Entry<String, String> entry: database.getDatabase().entrySet()){
-                    databaseToText = databaseToText + entry.getKey() + ": " + entry.getValue() + "\n";
+                    databaseToText.append(entry.getKey()).append(": ").append(entry.getValue()).append("\n");
                 }
                 textView.setText(databaseToText.substring(0,databaseToText.length() - 1)); //remove new line at the end of the list
             }
         });
-
-        /*
-        ToDo: smaller and bigger Displays
-         */
 
     }
 

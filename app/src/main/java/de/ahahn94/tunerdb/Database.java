@@ -1,3 +1,21 @@
+/*
+ * Copyright (c) 2018 ahahn94.
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; either version 2
+ * of the License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ *
+ */
+
 package de.ahahn94.tunerdb;
 
 import android.content.Context;
@@ -9,6 +27,8 @@ import java.util.LinkedHashMap;
 
 /**
  * Class containing the database methods.
+ * @author ahahn94
+ * @version 1.0
  */
 public class Database {
     private LinkedHashMap<String, String> database;   //Database
@@ -22,7 +42,7 @@ public class Database {
      * @param restorePath Res-ID of restore file.
      * @param context App context.
      */
-    public Database(String databasePath, int restorePath, Context context) {
+    Database(String databasePath, int restorePath, Context context) {
         this.databasePath = databasePath;
         this.restoreFileResID = restorePath;
         this.context = context;
@@ -57,9 +77,7 @@ public class Database {
                 database.put(parts[0], parts[1]);
             }
             bufferedReader.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         Log.d("---INFO---", "importDatabase: done");
